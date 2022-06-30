@@ -1,0 +1,1 @@
+docker build -f clientCertApi.Dockerfile -t baoduy2412/cert-auth-api:1.0.0 --build-arg PAT=[NUGET READ PAT] .

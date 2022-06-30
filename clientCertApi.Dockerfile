@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/*
 	
 WORKDIR /app
-# COPY ./nuget.config ./nuget.config
 COPY ./HBD.Samples.ClientCertAuthApi ./
 
 RUN wget -qO- https://raw.githubusercontent.com/Microsoft/artifacts-credprovider/master/helpers/installcredprovider.sh | bash
@@ -17,8 +16,10 @@ ARG PAT
 ENV NUGET_CREDENTIALPROVIDER_SESSIONTOKENCACHE_ENABLED true
 ENV VSS_NUGET_EXTERNAL_FEED_ENDPOINTS "{\"endpointCredentials\": [{\"endpoint\":\"https://nuget.pkg.github.com/baoduy/index.json\", \"password\":\"$PAT\"}]}"
 RUN dotnet restore ./HBD.Samples.ClientCertAuthApi.csproj -s "https://api.nuget.org/v3/index.json" -s "https://nuget.pkg.github.com/baoduy/index.json"
+
 # Copy everying else and build app
-COPY . .
+# COPY . .
+
 WORKDIR /app
 
 # RUN dotnet publish HBD.YarpProxy.csproj -c Release -o out -r alpine-x64 -p:PublishTrimmed=true -p:TrimMode=Link --self-contained true

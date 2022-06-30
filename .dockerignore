@@ -2,6 +2,6 @@
 **/bin
 **/obj
 **/*.pdf
-dockerbuild.sh
+**/*.sh
 docker.dockerfile
 pipeline
