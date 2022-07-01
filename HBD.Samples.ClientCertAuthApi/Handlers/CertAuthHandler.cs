@@ -11,8 +11,9 @@ public class CertAuthHandler : DefaultCertificateAuthenticationEvents
     {
     }
 
-    public override Task AuthenticationFailed(CertificateAuthenticationFailedContext context)
+    public override Task CertificateValidated(CertificateValidatedContext context)
     {
-        return base.AuthenticationFailed(context);
+        Console.WriteLine($"Validating Cert: {context.ClientCertificate.Thumbprint}");
+        return base.CertificateValidated(context);
     }
 }

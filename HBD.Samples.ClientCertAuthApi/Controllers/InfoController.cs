@@ -15,5 +15,6 @@ public class InfoController : ControllerBase
     }
 
     [HttpGet]
+    [HttpPost]
     public IHeaderDictionary Get() => Request.Headers;
 }

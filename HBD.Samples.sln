@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBD.Samples.ClientCertAuthApi", "HBD.Samples.ClientCertAuthApi\HBD.Samples.ClientCertAuthApi.csproj", "{948DFE6A-0EFC-47F5-A2C4-2D02FFBA0520}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{847C013B-02A2-4B27-904D-EEEE1E2C1260}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
