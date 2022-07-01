@@ -13,7 +13,7 @@ public class CertAuthHandler : DefaultCertificateAuthenticationEvents
 
     public override Task CertificateValidated(CertificateValidatedContext context)
     {
-        Console.WriteLine($"Validating Cert: {context.ClientCertificate.Thumbprint}");
+        Console.WriteLine($"Validating Cert: {context.ClientCertificate?.Thumbprint}");
         return base.CertificateValidated(context);
     }
 }
