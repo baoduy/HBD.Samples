@@ -11,7 +11,7 @@ builder.Services.AddAuthentication(CertificateAuthenticationDefaults.Authenticat
         new CertAuthConfig
         {
             ClientCertificateMode = ClientCertificateMode.AllowCertificate,
-            CertificateForwardingHeader = "ssl-client-cert",
+            CertificateForwardingHeader = "x-forwarded-client-cert",
             ConfigureOptions = o =>
             {
                 o.AllowedCertificateTypes = CertificateTypes.All;
