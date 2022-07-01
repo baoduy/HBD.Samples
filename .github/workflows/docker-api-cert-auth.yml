@@ -50,6 +50,7 @@ jobs:
         logout: true
     
     - name: docker pull cache image
+      continue-on-error: true
       run: docker pull ${{ env.Image_Name }}:latest
             
     - name: Build the Docker image
