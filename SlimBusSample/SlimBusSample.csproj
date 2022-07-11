@@ -7,7 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+        <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+        <PackageReference Include="SlimMessageBus" Version="1.6.0" />
+        <PackageReference Include="SlimMessageBus.Host.AspNetCore" Version="1.7.1" />
+        <PackageReference Include="SlimMessageBus.Host.AzureServiceBus" Version="1.19.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
 </Project>
