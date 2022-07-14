@@ -2,10 +2,8 @@ using MediatR;
 using SlimBusSample.Handlers;
 using SlimBusSample.Helpers;
 using SlimBusSample.Models;
-using SlimMessageBus;
 using SlimMessageBus.Host.AspNetCore;
 using SlimMessageBus.Host.AzureServiceBus;
-using SlimMessageBus.Host.DependencyResolver;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,16 +27,23 @@ builder.Services.AddHttpContextAccessor()
                     .Instances(1)
                     .WithConsumer<BusMessageHandler>()
                 )
+                .Consume<BusMessage>(c=>c.Topic("topic-1")
+                    .SubscriptionName("sub-2")
+                    .SubscriptionSqlFilter($"{nameof(BusMessage.FilterProperty)}='Steven'")
+                    .PrefetchCount(10)
+                    .Instances(1)
+                    .WithConsumer<BusMessageHandler>()
+                )
                 .WithProviderServiceBus(new ServiceBusMessageBusSettings(builder.Configuration.GetConnectionString("AzureBus"))
                 {
                     TopologyProvisioning = new ServiceBusTopologyProvisioningSettings
                     {
-                        Enabled = false
+                        Enabled = true,
                         // CanConsumerCreateQueue = false,
                         // CanConsumerCreateTopic = false,
                         // CanProducerCreateTopic = false,
                         // CanProducerCreateQueue = false,
-                        // CanConsumerCreateSubscription = false,
+                        CanConsumerCreateSubscription = true,
                     }
                 })
                 // Add other bus transports, if needed
@@ -58,10 +63,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
 
-MessageBus.SetProvider(MessageBusCurrentProviderBuilder.Create().From(app).Build());
-app.Run();
+await app.RunWithBusAsync();
