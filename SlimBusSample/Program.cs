@@ -36,7 +36,7 @@ builder.Services.AddHttpContextAccessor()
                 )
                 .WithProviderServiceBus(new ServiceBusMessageBusSettings(builder.Configuration.GetConnectionString("AzureBus"))
                 {
-                    TopologyProvisioning = new ServiceBusTopologyProvisioningSettings
+                    TopologyProvisioning = new ServiceBusTopologySettings
                     {
                         Enabled = true,
                         // CanConsumerCreateQueue = false,

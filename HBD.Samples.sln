@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBD.Samples.ClientCertAuthApi", "HBD.Samples.ClientCertAuthApi\HBD.Samples.ClientCertAuthApi.csproj", "{948DFE6A-0EFC-47F5-A2C4-2D02FFBA0520}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{847C013B-02A2-4B27-904D-EEEE1E2C1260}"
 	ProjectSection(SolutionItems) = preProject
 		nuget.config = nuget.config
+		HBD.StaticApp.dockerfile = HBD.StaticApp.dockerfile
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimBusSample", "SlimBusSample\SlimBusSample.csproj", "{64FE2623-4DC0-4FA9-B120-748E9EE3DEA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBD.StaticApp", "HBD.StaticApp\HBD.StaticApp.csproj", "{2AE9242A-60D8-4490-870D-EC4488271208}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,13 +16,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{948DFE6A-0EFC-47F5-A2C4-2D02FFBA0520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{948DFE6A-0EFC-47F5-A2C4-2D02FFBA0520}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{948DFE6A-0EFC-47F5-A2C4-2D02FFBA0520}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{948DFE6A-0EFC-47F5-A2C4-2D02FFBA0520}.Release|Any CPU.Build.0 = Release|Any CPU
 		{64FE2623-4DC0-4FA9-B120-748E9EE3DEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{64FE2623-4DC0-4FA9-B120-748E9EE3DEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64FE2623-4DC0-4FA9-B120-748E9EE3DEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64FE2623-4DC0-4FA9-B120-748E9EE3DEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE9242A-60D8-4490-870D-EC4488271208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE9242A-60D8-4490-870D-EC4488271208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE9242A-60D8-4490-870D-EC4488271208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE9242A-60D8-4490-870D-EC4488271208}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
