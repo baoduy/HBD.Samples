@@ -3,13 +3,10 @@ name: Docker
 on:
   push:
     branches: [ main, master ]
-    # paths: 
-    # - HBD.Samples.ClientCertAuthApi
-  
 
 env:
-  Docker_File: 'clientCertApi.Dockerfile'
-  Image_Name: 'baoduy2412/api-cert-auth'
+  Docker_File: 'HBD.StaticApp.dockerfile'
+  Image_Name: 'baoduy2412/static-app'
   Is_Draft_Release: false
   
 jobs:
