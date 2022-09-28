@@ -17,8 +17,8 @@ RUN dotnet publish ./HBD.StaticApp.csproj -r linux-x64 -c Release --self-contain
 
 FROM alpine:latest AS runtime
 
-RUN useradd -u 1000 user
-USER user
+# RUN useradd -u 1000 user
+# USER user
 
 WORKDIR /app
 COPY --from=build /app/out ./
