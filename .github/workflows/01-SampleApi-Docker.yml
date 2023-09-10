@@ -10,7 +10,7 @@ jobs:
     uses: baoduy/ShareWorkflows/.github/workflows/docker-publish.yaml@main
     with:
       dockerFile: '01_Multi_platform_docker_image_for_NET/SampleApi/Dockerfile'
-      context: '"./01_Multi_platform_docker_image_for_NET/SampleApi"'
+      context: '"./01_Multi_platform_docker_image_for_NET"'
       imageName: 'baoduy2412/sample-01-api'
       platforms: linux/arm64,linux/amd64
     secrets:
