@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - 'main'
-  
+
 jobs:
   dotnet_release_job:
     uses: baoduy/ShareWorkflows/.github/workflows/docker-publish.yaml@main
     with:
-      dockerFile: '"01. Multi platform docker image for .NET/SampleApi/Dockerfile"'
-      context: '"./01. Multi platform docker image for .NET/SampleApi"'
+      dockerFile: '01_Multi_platform_docker_image_for_NET/SampleApi/Dockerfile'
+      context: '"./01_Multi_platform_docker_image_for_NET/SampleApi"'
       imageName: 'baoduy2412/sample-01-api'
       platforms: linux/arm64,linux/amd64
     secrets:
